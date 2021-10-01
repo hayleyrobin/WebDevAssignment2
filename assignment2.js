@@ -16,9 +16,16 @@ Array.prototype.myMap = function(callbackFn) {
     return newNum;
 };
 
-// FILTER //
-Array.prototype.myFilter = function() {
-
+// FILTER: creates a new array with all elements that pass the test implemented by the provided function.//
+Array.prototype.myFilter = function(callbackFn) {
+    const newArr = [];
+    for( let i = 0; i < this.length; i++){
+        if(this[i] === undefined) continue; 
+        if(callbackFn(this[i],i, this)){ // if word passes test, add to filtered array
+            newArr.push(this[i]);
+        }
+    }
+    return newArr;
 };
 
 // SOME //
