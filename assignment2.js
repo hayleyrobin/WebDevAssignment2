@@ -60,9 +60,13 @@ Array.prototype.myIncludes = function(arg1, arg2=0) {// not expecting a callback
     return false;
 };
 
-// INDEXOF //
-Array.prototype.myIndexOf = function() {
-
+// INDEXOF: returns the first index at which a given element can be found in the array, or -1 if it is not present.//
+Array.prototype.myIndexOf = function(arg1, arg2=0) {
+    for( let i = arg2; i < this.length; i++){
+        if(this[i] === undefined) continue; 
+        if(arg1 === this[i]) return i;
+    }
+    return -1;
 };
 
 // PUSH //
