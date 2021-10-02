@@ -80,9 +80,13 @@ Array.prototype.myPush = function(...args) {
     return this.length;
 };
 
-// LASTINDEXOF //
-Array.prototype.myLastIndexOf = function() {
-
+// LASTINDEXOF:  returns the last index at which a given element can be found in the array, or -1 if it is not present//
+Array.prototype.myLastIndexOf = function(arg1, arg2= this.length-1) { // Defaults to the array's length minus one (arr.length - 1)
+    for( let i = arg2; i >= 0; i--){ // search backwards
+        if(this[i] === undefined) continue; 
+        if(arg1 === this[i]) return i;
+    }
+    return -1;  
 };
 
 // KEYS //
