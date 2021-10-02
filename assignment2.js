@@ -51,9 +51,13 @@ Array.prototype.myReduce = function() {
 
 };
 
-// INCLUDES //
-Array.prototype.myIncludes = function() {
-
+// INCLUDES: whether an array includes a certain value among its entries, returning true or false as appropriate.//
+Array.prototype.myIncludes = function(arg1, arg2=0) {// not expecting a callback function
+    for( let i = arg2; i < this.length; i++){ // start at given index
+        if(this[i] === undefined) continue;
+         if(this[i] === arg1) return true; 
+    }
+    return false;
 };
 
 // INDEXOF //
