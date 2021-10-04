@@ -48,9 +48,14 @@ Array.prototype.myEvery = function(callbackFn) {
     return true;
 };
 
-// REDUCE //
-Array.prototype.myReduce = function() {
-
+// REDUCE: “reducer” callback function on each element of the array, passing in the return value from the calculation on the preceding element.//
+Array.prototype.myReduce = function(callbackFn) {
+    let j = 0;
+    let total = 0;
+    for(let i = 0; i< this.length; i++){
+        total += callbackFn(j,this[i],i, this);
+    }
+    return total;
 };
 
 // INCLUDES: whether an array includes a certain value among its entries, returning true or false as appropriate.//
