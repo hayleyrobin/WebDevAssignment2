@@ -100,8 +100,11 @@ Object.grabKeys = function(obj1) {
     return newArr;
 };
 
-// VALUES //
-Object.grabValues = function() {
-
+// VALUES:  returns an array of a given object's own enumerable property values//
+Object.grabValues = function(obj1) {
+    const newArr = [];
+    for(let i in obj1){ // get key for each new value
+        newArr.push(obj1[i]);
+    }
+    return newArr;
 };
-
