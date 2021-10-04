@@ -1,3 +1,5 @@
+// Hayley Robinson
+
 // FOR EACH: executes a provided function once for each array element //
 Array.prototype.myEach = function(callbackFn) {
     for (let i = 0; i < this.length; i++){
@@ -89,9 +91,13 @@ Array.prototype.myLastIndexOf = function(arg1, arg2= this.length-1) { // Default
     return -1;  
 };
 
-// KEYS //
-Object.grabKeys = function() {
-
+// KEYS: returns an array of a given object's own enumerable property names, iterated in the same order that a normal loop would.//
+Object.grabKeys = function(obj1) {
+    const newArr = [];
+    for(let i in obj1){ // get key for each new value
+        newArr.push(i);
+    }
+    return newArr;
 };
 
 // VALUES //
